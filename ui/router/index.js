@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MyLanding from '../pages/MyLanding.vue'
+import { authGuard } from '@auth0/auth0-vue';
+import LandingPage from '../pages/LandingPage.vue'
+import HomePage from '../pages/HomePage.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -7,8 +9,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'landing',
-      component: MyLanding
+      component: LandingPage
     },
+    {
+      path: '/home',
+      name: 'home',
+      component: HomePage,
+      beforeEnter: authGuard
+    }
   ]
 })
 
