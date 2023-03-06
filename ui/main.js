@@ -1,8 +1,13 @@
 import {createApp} from 'vue'
+import { createPinia } from 'pinia'
 import { createAuth0 } from '@auth0/auth0-vue';
 
 import App from './App.vue'
 import router from './router'
+import Notifications from '@kyvg/vue3-notification'
+
+
+const pinia = createPinia()
 
 import './assets/main.css'
 
@@ -18,5 +23,7 @@ app.use(
   })
 );
 
+app.use(Notifications)
+app.use(pinia)
 app.use(router)
 app.mount("#app")

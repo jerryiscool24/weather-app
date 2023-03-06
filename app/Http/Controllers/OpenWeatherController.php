@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Core\OpenWeather\Weather;
+use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\WeatherRequest as Request;
 use App\Http\Resources\WeatherResource as Resource;
-use Symfony\Component\HttpFoundation\Response;
 
 class OpenWeatherController extends Controller
 {
@@ -18,7 +18,7 @@ class OpenWeatherController extends Controller
 
         $response = $service->get('weather', ['q' => $request->get('city')]);
 
-        if($response->cod === 200) {
+        if ($response->cod === 200) {
             return new Resource($response);
         }
 
