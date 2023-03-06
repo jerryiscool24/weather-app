@@ -15,8 +15,10 @@
     "dependencies": {
         "@auth0/auth0-vue": "^2.0.2",
         "@heroicons/vue": "^2.0.16",
+        "@kyvg/vue3-notification": "^2.9.0",
         "@vitejs/plugin-vue": "^4.0.0",
         "@vitejs/plugin-vue-jsx": "^3.0.0",
+        "pinia": "^2.0.33",
         "vue": "^3.2.36",
         "vue-loader": "^17.0.1",
         "vue-router": "^4.1.6"

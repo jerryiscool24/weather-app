@@ -1,7 +1,6 @@
-import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue'
+const path = require('path')
 
 export default defineConfig({
     plugins: [
@@ -9,7 +8,8 @@ export default defineConfig({
     ],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./', import.meta.url))
+        '@': path.resolve(__dirname, './'),
+        '@axios': path.resolve(__dirname, "./libs/axios")
       }
     },
 });
